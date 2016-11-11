@@ -6,15 +6,24 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app';
 
 import { HomeComponent } from './a2/views/home.component';
+import { ViewRetrospectiveComponent } from './a2/views/view-retrospective.component';
 
 @NgModule({
     imports: [BrowserModule, RouterModule.forRoot([
         {
             path:'',
             component: HomeComponent
+        },
+        {
+            path:'view-retrospective/:id',
+            component: ViewRetrospectiveComponent
         }
     ]) ],
-    declarations: [AppComponent, HomeComponent],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        ViewRetrospectiveComponent
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

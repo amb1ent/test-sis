@@ -2,7 +2,7 @@
     <h3>Retrospectives</h3>
     <ul>
         <li *ngFor="let r of model">
-            <a [routerLink]="['view-retrospective',{'name':r.name}]">{{ r.name }} &mdash; {{ r.date }} &mdash; {{ r.summary }}</a>
+            <a [routerLink]="['view-retrospective',r.name]">{{ r.name }} &mdash; {{ r.date }} &mdash; {{ r.summary }}</a>
         </li>
     </ul>
 </div>
