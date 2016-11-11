@@ -1,4 +1,8 @@
 .vs/
+.idea/
+*.iml
+*.ipr
+*.iws
 packages/
 ScrumRetrospectives/obj/
 ScrumRetrospectives/bin/
