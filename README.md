@@ -12,3 +12,11 @@ A simple angular2 scrum manager.
 Notes:
 
 ASP.net MVC 5 and angular 2: http://www.mithunvp.com/using-angular-2-asp-net-mvc-5-visual-studio/ 
+
+-=-=-=-=-=-=-=-=-=-=-=-
+
+alternative startup instructions (angular2 front-end only; linux/mac)
+
+$ cd ScrumRetrospectives
+$ npm install && typings install
+$ npm start
