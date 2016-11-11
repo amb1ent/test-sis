@@ -23,6 +23,7 @@ $ npm start
 
 -=-=-=-=-=-=-=-=-=-=-=-
 
+```
 TODO:
 
 angular2 : amend the view-retrospective template to show the retrospective data
@@ -35,3 +36,4 @@ asp.net : create controller for the Retrospective with a HTTP GET /scrum/retrosp
 asp.net : amend Retrospective controller to have a "create feedback" method
 
 note: a2 is great.  we could improve search by having a "search more" which goes on the server and searches server-side after setting the data page size to 1000 on the client and having search service helpers.  do most search on the client if you can.
+```
