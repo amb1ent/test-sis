@@ -13,6 +13,11 @@ namespace ScrumRetrospectives.Controllers
             return View();
         }
 
+        public ActionResult Missing()
+        {
+            return new RedirectResult("/");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

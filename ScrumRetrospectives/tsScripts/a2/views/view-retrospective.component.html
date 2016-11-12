@@ -1,10 +1,18 @@
 <div>
     <h3>Retrospective &mdash; {{model.name}}</h3>
     <form #f="ngForm" (ngSubmit)="return;" novalidate>
-        <label>
-            <h4>Name</h4>
-            <input [(ngModel)]="model.name" [ngModelOptions]="{standalone:true}" disabled placeholder="Name">
-        </label>
+        <div>
+            <label>
+                <h4>Name</h4>
+                <input name="name" [(ngModel)]="model.name" disabled placeholder="Name">
+            </label>
+        </div>
+        <div>
+            <label>
+                <h4>Summary</h4>
+                <textarea name="summary" [(ngModel)]="model.summary" disabled placeholder="Summary"></textarea>
+            </label>
+        </div>
     </form>
 </div>
 
