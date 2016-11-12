@@ -1,3 +1,4 @@
+/// <binding BeforeBuild='build' Clean='clean' />
 var ts = require('gulp-typescript');
 var gulp = require('gulp');
 var clean = require('gulp-clean');
@@ -43,5 +44,7 @@ gulp.task('watch', ['watch.ts']);
 gulp.task('watch.ts', ['ts'], function () {
     return gulp.watch('tsScripts/*.ts', ['ts']);
 });
+
+gulp.task('build', ['scriptsNStyles', 'ts']);
 
 gulp.task('default', ['scriptsNStyles', 'watch']);
