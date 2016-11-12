@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app';
 
@@ -9,7 +10,10 @@ import { HomeComponent } from './a2/views/home.component';
 import { ViewRetrospectiveComponent } from './a2/views/view-retrospective.component';
 
 @NgModule({
-    imports: [BrowserModule, RouterModule.forRoot([
+    imports: [
+        BrowserModule,
+        FormsModule,
+        RouterModule.forRoot([
         {
             path:'',
             component: HomeComponent
