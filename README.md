@@ -2,8 +2,9 @@
 
 Pre-requisities:
 
-Visual Studio 2015 (Update 3 RTM)
-nodejs tools for VS2015: https://github.com/Microsoft/nodejstools/releases/tag/v1.2.RTW
+. Visual Studio 2015 (Update 3 RTM)
+. nodejs tools for VS2015: https://github.com/Microsoft/nodejstools/releases/tag/v1.2.RTW
+. tools including task runner explorer: https://visualstudiogallery.msdn.microsoft.com/c94a02e9-f2e9-4bad-a952-a63a967e3935?SRC=Featured
 
 A simple angular2 scrum manager.
 
