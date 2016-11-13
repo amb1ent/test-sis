@@ -1,5 +1,3 @@
-import { JsonApiModelConfig, JsonApiModel, Attribute, HasMany, BelongsTo } from 'angular2-jsonapi';
-
 export enum FeedbackType {
     POSITIVE = 1,
     NEGATIVE = 2,
@@ -7,30 +5,16 @@ export enum FeedbackType {
     PRAISE = 4
 }
 
-@JsonApiModelConfig({
-    type: 'retrospective_feedback'
-})
-export class RetrospectiveFeedback extends JsonApiModel {
-    @Attribute()
-    public username: string;
-    @Attribute()
-    public body: string;
-    @Attribute()
+export class RetrospectiveFeedback {
+    public username:string;
+    public body:string;
     public feedbackType:FeedbackType;
 }
 
-@JsonApiModelConfig({
-    type: 'Scrum'
-})
-export class Retrospective extends JsonApiModel {
-    @Attribute()
-    public name: string; // unique key
-    @Attribute()
-    public summary: string;
-    @Attribute()
-    public date: string;
-    @HasMany()
-    public participants: string[];
-    @HasMany()
+export class Retrospective {
+    public name:string; // unique key
+    public summary:string;
+    public date:string;
+    public participants:string[];
     public feedback:RetrospectiveFeedback[];
 }

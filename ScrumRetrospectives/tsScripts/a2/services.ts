@@ -1,32 +1,8 @@
 import {Injectable} from '@angular/core';
-import { Http} from '@angular/http';
-import {Retrospective, RetrospectiveFeedback} from "./entities";
+import {Retrospective} from "./entities";
 import {FeedbackType} from "./entities";
-
-import { JsonApiDatastoreConfig, JsonApiDatastore } from 'angular2-jsonapi';
-
-@Injectable()
-@JsonApiDatastoreConfig({
-    baseUrl: '/api/',
-    models: {
-        Scrum: Retrospective
-    }
-})
-export class Datastore extends JsonApiDatastore {
-
-    constructor(http: Http) {
-        super(http);
-    }
-
-}
-
-
 @Injectable()
 export class ScrumService {
-
-    constructor(private ds:Datastore) {}
-
-    /*
     private model:Retrospective[] = [
         {
             name:'Retrospective 1',
@@ -50,9 +26,7 @@ export class ScrumService {
             ]
         }
     ];
-    */
-
-    public getModel(after:any) {
-        this.ds.query(Retrospective,{}).subscribe((x:Retrospective[]) => { after(x); });
+    public getModel():Retrospective[] {
+        return this.model;
     }
 }
