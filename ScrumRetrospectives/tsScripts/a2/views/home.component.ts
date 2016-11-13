@@ -13,12 +13,12 @@ export class HomeComponent implements OnChanges {
     constructor(private scrumService:ScrumService) {
     }
 
-    model:Retrospective[] = null;
+    model:Retrospective[] = [];
 
     ngOnInit() {
         let x: HomeComponent = this;
-        this.scrumService.listRetrospectives(model => {
-            x.model = model;
+        this.scrumService.listRetrospectives(retrospectives => {
+            x.model = retrospectives;
         });
     }
 
@@ -27,7 +27,7 @@ export class HomeComponent implements OnChanges {
     }
 
     ngOnDestroy() {
-        this.model = null;
+        this.model = [];
     }
 
 

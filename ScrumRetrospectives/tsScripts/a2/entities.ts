@@ -22,3 +22,7 @@ export class Retrospective {
 export interface RetrospectivesFunc {
     (retrospectives:Retrospective[]):void
 }
+
+export interface RetrospectiveFunc {
+    (retrospective: Retrospective): void
+}

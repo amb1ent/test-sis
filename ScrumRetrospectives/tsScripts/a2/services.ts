@@ -3,6 +3,7 @@ import {Http,Response} from '@angular/http';
 import {Retrospective} from "./entities";
 import {FeedbackType} from "./entities";
 import {RetrospectivesFunc} from './entities';
+import {RetrospectiveFunc} from './entities';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -35,7 +36,18 @@ export class ScrumService {
         this.http.get('/api/Scrum')
             .toPromise()
             .then(response => {
-                consume(response.json() as Retrospective[]);
+                let x: Retrospective[] = (response.json() || []) as Retrospective[];
+                //x = JSON.parse(JSON.stringify(x));
+                consume(x);
+            });
+    }
+    public getRetrospective(id:string, consume: RetrospectiveFunc): void {
+        this.http.get('/api/Scrum/' + encodeURIComponent(id))
+            .toPromise()
+            .then(response => {
+                let x: Retrospective = (response.json() || {}) as Retrospective;
+                //x = JSON.parse(JSON.stringify(x));
+                consume(x);
             });
     }
 }
