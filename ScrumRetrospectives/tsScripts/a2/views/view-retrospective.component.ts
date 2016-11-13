@@ -20,15 +20,17 @@ export class ViewRetrospectiveComponent implements OnChanges {
     model:Retrospective = null;
 
     ngOnInit() {
-        this.id =this.route.snapshot.params['id'];
-        let retrospectives = this.scrumService.getModel();
-        this.model = new Retrospective();
-        for (let i = 0, l = retrospectives.length; i<l;++i) {
-            if (this.id == retrospectives[i].name) {
-                this.model=retrospectives[i];
-                break;
+        this.id = this.route.snapshot.params['id'];
+        let x:ViewRetrospectiveComponent = this;
+        this.scrumService.listRetrospectives(model => {
+            x.model = new Retrospective();
+            for (let i = 0, l = model.length; i < l; ++i) {
+                if (this.id == model[i].name) {
+                    this.model = model[i];
+                    break;
+                }
             }
-        }
+        });
     }
 
     ngOnChanges(sc:SimpleChanges) {

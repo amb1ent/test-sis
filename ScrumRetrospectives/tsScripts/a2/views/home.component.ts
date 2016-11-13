@@ -16,7 +16,10 @@ export class HomeComponent implements OnChanges {
     model:Retrospective[] = null;
 
     ngOnInit() {
-        this.model = this.scrumService.getModel();
+        let x: HomeComponent = this;
+        this.scrumService.listRetrospectives(model => {
+            x.model = model;
+        });
     }
 
     ngOnChanges(sc:SimpleChanges) {

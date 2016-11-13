@@ -18,3 +18,7 @@ export class Retrospective {
     public participants:string[];
     public feedback:RetrospectiveFeedback[];
 }
+
+export interface RetrospectivesFunc {
+    (retrospectives:Retrospective[]):void
+}

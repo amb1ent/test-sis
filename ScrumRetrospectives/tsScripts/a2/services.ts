@@ -1,9 +1,14 @@
 import {Injectable} from '@angular/core';
+import {Http,Response} from '@angular/http';
 import {Retrospective} from "./entities";
 import {FeedbackType} from "./entities";
+import {RetrospectivesFunc} from './entities';
+import 'rxjs/add/operator/toPromise';
+
 @Injectable()
 export class ScrumService {
-    private model:Retrospective[] = [
+    constructor(private http:Http) {}
+    private model:Retrospective[] = null; /*[
         {
             name:'Retrospective 1',
             summary:'Post release retrospective',
@@ -25,8 +30,12 @@ export class ScrumService {
                 }
             ]
         }
-    ];
-    public getModel():Retrospective[] {
-        return this.model;
+    ];*/
+    public listRetrospectives(consume: RetrospectivesFunc): void {
+        this.http.get('/api/Scrum')
+            .toPromise()
+            .then(response => {
+                consume(response.json() as Retrospective[]);
+            });
     }
 }
