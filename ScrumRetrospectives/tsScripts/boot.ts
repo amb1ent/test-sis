@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { JsonApiModule } from 'angular2-jsonapi';
 
 import { AppComponent } from './app';
 
@@ -13,6 +14,7 @@ import { ViewRetrospectiveComponent } from './a2/views/view-retrospective.compon
     imports: [
         BrowserModule,
         FormsModule,
+        JsonApiModule,
         RouterModule.forRoot([
         {
             path:'',
